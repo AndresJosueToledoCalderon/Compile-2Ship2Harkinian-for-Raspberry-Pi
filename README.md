@@ -3,6 +3,8 @@ The steps described to compile 2ship2harkinian port of " The Legend of Zelda Maj
 Credits to the team of HarbourMasters for making it possible.
 https://github.com/HarbourMasters/2ship2harkinian
 
+## Also you can download the distributable version up here. Download > download.zip 
+
 ## 1. Prerequisites:
 
 - Raspberry Pi 5 (Have not tested any older model) Raspberry Pi OS 64-bit (Debian Bookworm)
@@ -72,11 +74,10 @@ make -j$(nproc)
 ```
 sudo make install
 ```
-5) This an extra but mandatory step, cmake 3.25 will by default the one the os uses. So we will need to change it for the new compiled version:
+5) This an extra but mandatory step, cmake 3.25 will be by default the one the os uses. So we will need to change it for the new compiled version:
 ```
 # Optional, check your version:
 cmake --version
-
 # Using cmake --version you will notice that it may have a conflict with your older version.
 # So you can change it temporarly just for compilig by using:
 
