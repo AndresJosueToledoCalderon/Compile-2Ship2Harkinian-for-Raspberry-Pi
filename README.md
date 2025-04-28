@@ -1,6 +1,7 @@
 # Compile-2Ship2Harkinian-for-Raspberry-Pi-1.1.2-Sakoto-Charlie-Release.-[2025]
 The steps described to compile 2ship2harkinian port of " The Legend of Zelda Majora's Mask".
 Credits to the team of HarbourMasters for making it possible.
+https://github.com/HarbourMasters/2ship2harkinian
 
 ## 1. Prerequisites:
 
@@ -36,7 +37,8 @@ sudo apt-get install -y \
   python3-dev
 ```
 
-## Debian bookworm in raspberry pi, by default comes with cmake 3.25._ version, but to compile 2s2h we need cmake 3.26._ or above versions. Looking for the package the actual cmake is 3.28._ wich in my case, it worked. So there are two options, intalling a pre-compiled version or compile our own.
+## Debian bookworm 
+- In raspberry pi, by default comes with cmake 3.25._ version, but to compile 2s2h we need cmake 3.26._ or above versions. Looking for the package the actual cmake is 3.28._ wich in my case, it worked. So there are two options, intalling a pre-compiled version or compile our own.
 In this case I will describe the steps to compile your own version:
 
 1) Prepare the enviroment:
@@ -57,8 +59,10 @@ tar xf cmake-3.28.0.tar.gz
 cd cmake-3.28.0
 ```
 3) Configure and compile:
+Use this two commands one by one.
 ```
 ./bootstrap --parallel=$(nproc)
+
 make -j$(nproc)
 ```
 - Notice compiling may take a while depending on your pi. Mine is RPi 5  with 8GB of ram and it took like 10-15 minutes to compile.
@@ -73,6 +77,21 @@ sudo make install
 # Optional, check your version:
 cmake --version
 
+# Using cmake --version you will notice that it may have a conflict with your older version.
+# So you can change it temporarly just for compilig by using:
+
+export PATH=/opt/cmake-3.28/bin:$PATH
+
+# Then Reload:
+
+source ~/.bashrc
+
+# Check if your version is 3.28
+
+cmake --version
+
+# You should see:
+# cmake version 3.28.0 or similar.
 ```
 
 ## The final steps, compiling 2ship2harkinian. Take in consideration that compiling may take a while. Like 20-30 minutes. So be patient.
@@ -108,23 +127,6 @@ cmake --build build-cmake
 # 6. Created Executable:
 ```
 ./build-cmake/mm/2s2h.elf
-
-# Using cmake --version you will notice that it may have a conflict with your older version.
-# So you can change it temporarly just for compilig by using:
-
-export PATH=/opt/cmake-3.28/bin:$PATH
-
-# Then Reload:
-
-source ~/.bashrc
-
-# Check if your version is 3.28
-
-cmake --version
-
-# You should see:
-# cmake version 3.28.0 or similar.
-
 ```
 You can execute it by cd into the folder where 2s2h.elf is (the executable) and it will ask for your ROM.
 
