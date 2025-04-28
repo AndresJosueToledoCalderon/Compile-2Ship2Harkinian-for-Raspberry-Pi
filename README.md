@@ -75,6 +75,8 @@ make -j$(nproc)
 sudo make install
 ```
 5) This an extra but mandatory step, cmake 3.25 will be by default the one the os uses. So we will need to change it for the new compiled version:
+
+- Update: Just check if "cmake --version" says 3.28 out of all directories. If it says 3.28, then skip this step (5).
 ```
 # Optional, check your version:
 cmake --version
