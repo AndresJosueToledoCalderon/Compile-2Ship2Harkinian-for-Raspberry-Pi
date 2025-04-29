@@ -1,5 +1,8 @@
 ## Also you can download the distributable version up here. Download > 2s2h_exec.zip
 It should be prepared to just drop your legally adquired ROM to compile the final steps. Then play !
+
+
+
 ---
 
 # Compile-2Ship2Harkinian-for-Raspberry-Pi-1.1.2-Sakoto-Charlie-Release.-[2025]
