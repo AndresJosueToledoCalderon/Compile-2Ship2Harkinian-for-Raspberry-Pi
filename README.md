@@ -1,9 +1,11 @@
+## Also you can download the distributable version up here. Download > 2s2h_exec.zip
+It should be prepared to just drop your legally adquired ROM to compile the final steps. Then play !
+---
+
 # Compile-2Ship2Harkinian-for-Raspberry-Pi-1.1.2-Sakoto-Charlie-Release.-[2025]
 The steps described to compile 2ship2harkinian port of " The Legend of Zelda Majora's Mask".
 Credits to the team of HarbourMasters for making it possible.
 https://github.com/HarbourMasters/2ship2harkinian
-
-## Also you can download the distributable version up here. Download > download.zip 
 
 ## 1. Prerequisites:
 
@@ -17,26 +19,11 @@ https://github.com/HarbourMasters/2ship2harkinian
 
 ```bash
 sudo apt-get update && sudo apt upgrade -y
-sudo apt-get install -y \
-  build-essential \
-  git \
-  lsb-release \
-  ninja-build \
-  gcc g++ \
-  # SDL2 and network
-  libsdl2-dev libsdl2-net-dev \
-  # PNG
-  libpng-dev \
-  # ZIP: development and user tool
-  libzip-dev libzip-tools zip \
-  # JSON, XML, logging
-  nlohmann-json3-dev libtinyxml2-dev libspdlog-dev \
-  # Boost (all metapack)
-  libboost-dev \
-  # OpenGL (mesa)
-  mesa-common-dev \
-  # (opcional) Python3 dev if you use modules
-  python3-dev
+
+sudo apt install -y git cmake ninja-build lsb-release libsdl2-dev libpng-dev libsdl2-net-dev \
+libzip-dev zipcmp zipmerge ziptool nlohmann-json3-dev libtinyxml2-dev libspdlog-dev \
+libboost-dev libglew-dev libglm-dev libcurl4-openssl-dev gcc g++ libogg-dev libvorbis-dev libvorbisenc-dev libbz2-dev libopus-dev libopusfile-dev pkg-config
+
 ```
 
 ## Debian bookworm 
@@ -74,9 +61,11 @@ make -j$(nproc)
 ```
 sudo make install
 ```
-5) This an extra but mandatory step, cmake 3.25 will be by default the one the os uses. So we will need to change it for the new compiled version:
+5) This an extra but mandatory step if cmake shows you an error of "ROOT", cmake 3.25 will be by default the one the os uses. So we will need to change it for the new compiled version:
 
-- Update: Just check if "cmake --version" says 3.28 out of all directories. If it says 3.28, then skip this step (5).
+- Update:
+- Just check if "cmake --version" says 3.28 out of all directories. If it says 3.28, then skip this step (5).
+  
 ```
 # Optional, check your version:
 cmake --version
@@ -112,22 +101,22 @@ git submodule update --init --recursive
 
 3) Generate the ninja project:
 ```
-cmake -H. -Bbuild-cmake -GNinja \
-  -DCMAKE_BUILD_TYPE=Release \
-  -DPython3_EXECUTABLE=$(which python3)
+mkdir build && cd build
+cmake -H.. -B. -GNinja -DCMAKE_BUILD_TYPE=Release
 ```
 
 4)  Generate the assets (2ship.o2r)
 ```
-cmake --build build-cmake --target Generate2ShipOtr
+cmake --build . --target Generate2ShipOtr
 ```
 
 5) finally compile everything: [Remeber this step may take a while depending on your hardware]
 ```
-cmake --build build-cmake
+cmake --build . -j$(nproc)   
 ```
 
 # 6. Created Executable:
+Finally you created a executable named 2s2h.elf. Remember it will ask you for you legally adquired ROM.
 ```
 ./build-cmake/mm/2s2h.elf
 ```
