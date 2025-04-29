@@ -1,4 +1,4 @@
-## Also you can download the distributable version up here. Download > 2s2h_exec.zip
+## Also you can download the distributable version up here. Download > 2 Ship 2 Harkinia.zip
 It should be prepared to just drop your legally adquired ROM to compile the final steps. Then play !
 
 
