@@ -1,12 +1,11 @@
-How to play it, and how it looks with mods: https://youtu.be/icCVXBLyXHg
-
 ## Also you can download the distributable version up here. Download > 2 Ship 2 Harkinia.zip
 It should be prepared to just drop your legally adquired ROM to compile the final steps. Then play !
 
+1) First before downloading and running it, you need to install this libraries:
+```
+sudo apt update && sudo apt install -y libzip4 libtinyxml2-9 libspdlog1.10 libspdlog-dev
 
-
----
-
+```
 # Compile-2Ship2Harkinian-for-Raspberry-Pi-1.1.2-Sakoto-Charlie-Release.-[2025]
 The steps described to compile 2ship2harkinian port of " The Legend of Zelda Majora's Mask".
 Credits to the team of HarbourMasters for making it possible.
@@ -17,8 +16,6 @@ https://github.com/HarbourMasters/2ship2harkinian
 - Raspberry Pi 5 (Have not tested any older model) Raspberry Pi OS 64-bit (Debian Bookworm)
 - Internet connection.
 - At least 4GB of ram available (recomended), but in my experience the raspberry pi never used more than 1.5 - 2 GB to compile.
-
----
 
 ## 2. Installing the necessary dependencies:
 
