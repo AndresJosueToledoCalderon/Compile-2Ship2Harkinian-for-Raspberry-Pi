@@ -177,3 +177,4 @@ You can use the .png image that is already downloaded: mmicon.png
 ```
 xdg-desktop-menu forceupdate
 ```
+![mmicon](https://github.com/user-attachments/assets/4d680a59-dee8-44e7-8edc-3b8679e36a48)
