@@ -153,7 +153,7 @@ cmake --build build-cmake --target clean
 cmake --build build-cmake --target ExtractAssetHeaders
 ```
 
-# Create a Desktop Executable
+# Create a Desktop Executable [Icon + Direct Acces]
 
 1) Create your .desktop file, example:
 ```
