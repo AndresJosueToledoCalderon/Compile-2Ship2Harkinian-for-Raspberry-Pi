@@ -1,11 +1,18 @@
 ## Also you can download the distributable version up here. Download > 2 Ship 2 Harkinia.zip
 It should be prepared to just drop your legally adquired ROM to compile the final steps. Then play !
+After everything is working go to the las part of this guide, you will find a way to create an icon in games.
 
 1) First before downloading and running it, you need to install this libraries:
 ```
 sudo apt update && sudo apt install -y libzip4 libtinyxml2-9 libspdlog1.10 libspdlog-dev
 
 ```
+2) Put your rom in the folder, where 2s2h.elf executable is.
+3) Execute the program and wait for it to copy the assets.
+4) If everything is ok, it will run and you will see lubstraship logo.
+5) Create an icon:
+   - Download the mmicon.png and follow the steps at the end fo the guide. Copy it where the 2s2h.elf executble is, just to make it easier to find.
+
 # Compile-2Ship2Harkinian-for-Raspberry-Pi-1.1.2-Sakoto-Charlie-Release.-[2025]
 The steps described to compile 2ship2harkinian port of " The Legend of Zelda Majora's Mask".
 Credits to the team of HarbourMasters for making it possible.
@@ -144,4 +151,29 @@ cmake --build build-cmake --target clean
 - Optional, if you need to regenerate the asset headers to check them into source:
 ```
 cmake --build build-cmake --target ExtractAssetHeaders
+```
+
+# Create a Desktop Executable
+
+1) Create your .desktop file, example:
+```
+nano ~/.local/share/applications/2s2h.desktop
+```
+
+2) Edit the file, copy and paste:
+```
+[Desktop Entry]
+Name=2Ship2Harkinian
+Exec=/home/pi/"Path to your executable"/2s2h.elf
+Icon=/home/pi/"Path to your icon"/mmicon.png
+Type=Application
+Categories=Game;
+StartupNotify=true
+Terminal=false
+```
+You can use the .png image that is already downloaded: mmicon.png
+
+3) Optional refresh the menu:
+```
+xdg-desktop-menu forceupdate
 ```
