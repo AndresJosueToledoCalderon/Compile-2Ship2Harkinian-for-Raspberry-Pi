@@ -1,3 +1,8 @@
+
+![20250529_16h09m05s_grim](https://github.com/user-attachments/assets/139c042e-48da-4cd7-bb2f-e4a6164c5ffd)
+![20250529_16h11m11s_grim](https://github.com/user-attachments/assets/89490dd4-266d-418a-a3e0-7532ba46f5c0)
+![20250529_16h10m32s_grim](https://github.com/user-attachments/assets/c1fce6a0-02c8-47c1-b898-61c5f26284a6)
+
 ## Also you can download the distributable version up here. Download > 2 Ship 2 Harkinia.zip
 It should be prepared to just drop your legally adquired ROM, ready to compile/copy [assets], the final steps. Then play !
 After everything is working go to the las part of this guide, you will find a way to create an icon in games.
